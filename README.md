@@ -5,17 +5,12 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 ## The Problem
-
 In 1981, IBM designed the PC keyboard to save space by making the right-side numpad double as arrow keys when NumLock was off.
-
 40 years later, keyboards have dedicated arrow keys, but this legacy design remains.
-
 **When NumLock is off, pressing numpad keys moves the cursor instead of typing numbers** — a problem that has plagued billions of Windows users for 40 years.
 
 ## The Solution
-
 ### Core Code (13 lines)
-
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #include<windows.h>
@@ -48,14 +43,12 @@ int main() {
 ```
 
 ## Files
-
 | File | Description | Lines |
 |------|-------------|-------|
 | `core.c` | Core solution (minimal implementation) | 13 |
 | `NumLockFixer.c` | Full-featured tool (menu / install / uninstall / registry mode) | ~250 |
 
 ## Full Version Features
-
 ```
 === NumLock Fixer ===
 1. Hook mode, disable numpad keys when NumLock is off (run once)
@@ -68,30 +61,26 @@ int main() {
 | Option | Function | Admin Required |
 |--------|----------|----------------|
 | 1 | Hook mode (run once) | ❌ |
-| 2 | Hook mode + install to C:\ + auto-start | ✅ |
+| 2 | Hook mode + install to `C:\` + auto-start | ✅ |
 | 3 | Uninstall + disable auto-start + restart | ✅ |
 | 4 | Registry mode (disable NumLock permanently) + restart | ✅ |
 | 5 | Restore registry mode + restart | ✅ |
 
 ## Compilation
-
 ### Full Version
 ```bash
 gcc -o NumLockFixer.exe NumLockFixer.c -luser32 -ladvapi32 -lshell32
 ```
-
 ### Core Version
 ```bash
 gcc -o core.exe core.c -luser32
 ```
 
 ## Usage
-
-1. Download `NumLockFixer.exe`
+1. Download `NumLockFixer.exe` from [Releases](https://github.com/NunuUno-jpg/NumLockFIxer/releases)
 2. Run as administrator (required for options 2/3/4/5)
 3. Select desired option
 4. Restart (options 3/4/5) or start working immediately (options 1/2)
 
 ## About
-
 Just 13 lines of code to fix a 40-year nightmare for Windows users
